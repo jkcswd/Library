@@ -12,6 +12,11 @@ Book.prototype = {
     info : function() {return `${this.title} by ${this.author}, ${this.pages} pages, I have ${this.read} it.`; }
 }
 
+//test books for lib
+
+const book1 = new Book('A Book','An Author', '200', 'yes');
+const book2 = new Book('Another Book', 'Another Author', '200', 'yes')
+
 //add to lib function
 function addBookToLibrary() {
     let title = prompt('what is the title of the book you wish to add?');
