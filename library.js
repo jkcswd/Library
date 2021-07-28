@@ -45,16 +45,13 @@ function addBookToLibrary() {
 //display lib function
 
 function displayLib() {
-
     myLibrary.forEach(e => {
         const div = document.createElement('div');
         const main = document.querySelector('.main');
         const textNode = document.createTextNode(e.info());
 
         div.classList.add('card');
-        main.appendChild(div.cloneNode(true));
+        main.appendChild(div);
         div.appendChild(textNode);
-    
-    
     });
 }
