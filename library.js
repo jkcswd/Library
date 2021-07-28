@@ -1,6 +1,6 @@
-let myLibrary = [];
 addButton();
-displayLib();
+
+let myLibrary = [];
 
 // Book constructor 
 function Book(title,author,pages,read) {
@@ -13,13 +13,6 @@ function Book(title,author,pages,read) {
 Book.prototype = {
     info : function() {return `${this.title} by ${this.author}, ${this.pages} pages, I have ${this.read} it.`; }
 }
-
-//test books for lib
-
-const book1 = new Book('A Book','An Author', '200', 'read');
-const book2 = new Book('Another Book', 'Another Author', '200', 'read')
-
-myLibrary = [book1,book2]
 
 //add to lib function
 function addBookToLibrary() {
@@ -63,6 +56,8 @@ function displayLib() {
 function addButton() {
     const addBtn = document.querySelector('.add-book');
 
-    addBtn.addEventListener('click', () => addBookToLibrary());
-    displayLib();
+    addBtn.addEventListener('click', () => {
+        addBookToLibrary();
+        displayLib();
+    })
 }
