@@ -1,8 +1,6 @@
 let myLibrary = [
     //{ title: "A Book ", author: "An Author", pages: "100", read: "read" },
     //{ title: "Another Book", author: "Another Author", pages: "200", read:"not read" },
-
-
 ];
 
 // Book constructor 
@@ -11,10 +9,10 @@ function Book(title,author,pages,read) {
     this.author = author
     this.pages = pages
     this.read = read
+}
 
-    this.info = function() {
-        return `${title} by ${author}, ${pages} pages, I have ${read} it.`
-    }
+Book.prototype = {
+    info : function() {return `${this.title} by ${this.author}, ${this.pages} pages, I have ${this.read} it.`; }
 }
 
 //add to lib function
