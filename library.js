@@ -1,4 +1,6 @@
 let myLibrary = [];
+addButton();
+displayLib();
 
 // Book constructor 
 function Book(title,author,pages,read) {
@@ -14,8 +16,8 @@ Book.prototype = {
 
 //test books for lib
 
-const book1 = new Book('A Book','An Author', '200', 'yes');
-const book2 = new Book('Another Book', 'Another Author', '200', 'yes')
+const book1 = new Book('A Book','An Author', '200', 'read');
+const book2 = new Book('Another Book', 'Another Author', '200', 'read')
 
 myLibrary = [book1,book2]
 
@@ -54,4 +56,13 @@ function displayLib() {
         main.appendChild(div);
         div.appendChild(textNode);
     });
+}
+
+// add to library button listener
+
+function addButton() {
+    const addBtn = document.querySelector('.add-book');
+
+    addBtn.addEventListener('click', () => addBookToLibrary());
+    displayLib();
 }
