@@ -17,6 +17,8 @@ Book.prototype = {
 const book1 = new Book('A Book','An Author', '200', 'yes');
 const book2 = new Book('Another Book', 'Another Author', '200', 'yes')
 
+myLibrary = [book1,book2]
+
 //add to lib function
 function addBookToLibrary() {
     let title = prompt('what is the title of the book you wish to add?');
@@ -47,10 +49,11 @@ function displayLib() {
     myLibrary.forEach(e => {
         const div = document.createElement('div');
         const main = document.querySelector('.main');
+        const textNode = document.createTextNode(e.info());
 
         div.classList.add('card');
         main.appendChild(div.cloneNode(true));
-        div.innerHTML += e.info();
+        div.appendChild(textNode);
     
     
     });
