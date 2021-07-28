@@ -1,5 +1,5 @@
 html {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body {
@@ -11,22 +11,43 @@ header {
     height: 100px;
     width: 100%;
     font-size: 50px;
-    text-align: center;
-    border: 1px red solid;
+    background-color: #1B7340;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.title {
+    margin-left: 20px;
+    color: white;
 }
 
 .main {
-    border: 1px black solid;
     height: 100%;
+    background-image: linear-gradient(#1B7340,white) ;
 }
 
 /* card styling */
 .card {
     height: 200px;
     width: 100px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
     transition: 0.3s;
+    background-color: whitesmoke;
 }
 .card:hover {
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+}
+
+/* add book button */
+.add-book {
+    font-size: 50px;
+    height:100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.add-book:hover {
+    transform: rotate(-90deg);
 }
