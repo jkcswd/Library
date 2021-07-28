@@ -1,4 +1,9 @@
-let myLibrary = [];
+let myLibrary = [
+    //{ title: "A Book ", author: "An Author", pages: "100", read: "read" },
+    //{ title: "Another Book", author: "Another Author", pages: "200", read:"not read" },
+
+
+];
 
 // Book constructor 
 function Book(title,author,pages,read) {
@@ -36,3 +41,18 @@ function addBookToLibrary() {
 }
 
 //display lib function
+
+function displayLib() {
+
+    myLibrary.forEach(e => {
+        const div = document.createElement('div');
+        const main = document.querySelector('.main');
+        const textNode = document.createTextNode("e.info()");
+
+        div.classList.add('card');
+        main.appendChild(div.cloneNode(true));
+        div.appendChild(textNode);
+    
+    
+    });
+}
