@@ -23,16 +23,19 @@ header {
 
 .main {
     height: 100%;
-    background-image: linear-gradient(#1B7340,whitesmoke) ;
+    background-image: linear-gradient(#1B7340,whitesmoke);
+    display: flex;
+    flex-direction: row;
 }
 
 /* card styling */
 .card {
-    height: 200px;
-    width: 100px;
+    height: 300px;
+    width: 200px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
     transition: 0.3s;
     background-color: whitesmoke;
+    margin: 20px;
 }
 .card:hover {
     box-shadow: 0 8px 16px rgba(0,0,0,0.8);
