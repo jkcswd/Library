@@ -7,20 +7,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="page">
-        <header>
-            <div class="title">My Library</div>
-        </header>
-        <div class="main">
-            <div class='card'>
-                <div class='add-book'>
-                    <span class="plus" style="font-size: 100px;">+</span>
-                </div>
+    <header>
+        <div class="title">My Library</div>
+    </header>
+    <div class="main">
+        <div class='card'>
+            <div class='add-book'>
+                <span class="plus" style="font-size: 100px;">+</span>
             </div>
         </div>
     </div>
     <div class="modal">
         <div class="modal-content">
+            <span class="close">&times;</span>
             <form action="library.js">
                 <label for="title">Title:</label>
                 <input type="text" id="title"/>
@@ -31,6 +30,7 @@
                 <label for="read">Read:</label>
                 <input type="checkbox" id="read">
             </form>
+            <button class="save">Save</button>
         </div>
     </div>
     <script src="library.js"></script>
