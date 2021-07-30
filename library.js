@@ -11,7 +11,14 @@ function Book(title,author,pages,read) {
 }
 
 Book.prototype = {
-    info : function() {return `${this.title} by ${this.author}, ${this.pages} pages, I have ${this.read} it.`; }
+    info : function() {return `${this.title}
+By ${this.author}
+
+
+${this.pages} pages
+
+
+I have ${this.read} it.`; }
 }
 
 //add to lib function
@@ -46,6 +53,7 @@ function displayLib() {
         const textNode = document.createTextNode(e.info());
 
         div.classList.add('card');
+        div.style = "white-space: pre;";
         main.appendChild(div);
         div.appendChild(textNode);
     });
