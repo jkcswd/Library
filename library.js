@@ -11,7 +11,8 @@ function Book(title,author,pages,read) {
 }
 
 Book.prototype = {
-    info : function() {return `${this.title}
+    info : function() {return `
+${this.title}
 By ${this.author}
 
 
