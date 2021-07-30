@@ -2,7 +2,7 @@ addButton();
 
 let myLibrary = [];
 
-// Book constructor 
+// Book constructor and prototype
 function Book(title,author,pages,read) {
     this.title = title
     this.author = author
@@ -24,22 +24,10 @@ I have ${this.read} it.`; }
 
 //add to lib function
 function addBookToLibrary() {
-    let title = prompt('what is the title of the book you wish to add?');
-    let author = prompt('who is the author?');
-    let pages = prompt('How many pages is it?');
-    let read = prompt('Have you read it(yes/no)?');
-
-    read = read.toLowerCase();
-    
-    while (!(read === 'yes' || read === 'no')) {
-        read = prompt('That is not "yes" or "no" please enter again.');
-        read = read.toLowerCase();
-    };
-
-    if (read === 'yes') {
-        read = 'read';
-    }else read = 'not read';
-
+    const title = document.querySelector('.title');
+    const author = document.querySelector('.author');
+    const pages = document.querySelector('.pages');
+    const read = document.querySelector('.read');
     const book = new Book(title, author, pages, read);
 
     myLibrary.push(book);
@@ -64,9 +52,22 @@ function displayLib() {
 
 function addButton() {
     const addBtn = document.querySelector('.add-book');
+    const modal = document.querySelector('.modal');
+    const saveBtn = document.querySelector('.save');
+    const closeBtn = document.querySelector('.close');
 
     addBtn.addEventListener('click', () => {
-        addBookToLibrary();
-        displayLib();
-    })
+        modal.style.display = "block";
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = "none";
+            displayLib();
+        });
+        saveBtn.addEventListener('click', () => {
+            modal.style.display = "none";
+            addBookToLibrary();
+            displayLib();
+        });
+        
+    });
 }
+
