@@ -42,15 +42,25 @@ function displayLib() {
         const textNode = document.createTextNode(e.info());
         const removeButton = document.createElement('div');
         const btnTextNode = document.createTextNode('X');
+        const readCheck =  document.createElement('input');
+        const label = document.createElement('label');
+        const labelTextNode = document.createTextNode('Read');
 
 
         div.classList.add('card');
         removeButton.classList.add('remove-btn');
         div.style = "white-space: pre;";
+        readCheck.setAttribute('type', 'checkbox');
+        readCheck.setAttribute('id', 'read-check');
+        label.setAttribute('for', 'read-check');
         main.appendChild(div);
         div.appendChild(textNode);
         div.appendChild(removeButton);
         removeButton.appendChild(btnTextNode);
+        div.appendChild(readCheck);
+        div.appendChild(label);
+        label.appendChild(labelTextNode);
+        
     });
 }
 
@@ -83,7 +93,8 @@ function addButton() {
         inputs.forEach(input  => input.value = '');
         check.checked = false;
     });
-        
-    
 }
 
+//remove book function 
+
+//change read status function
