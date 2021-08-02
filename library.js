@@ -47,8 +47,10 @@ function displayLib() {
 
 
         div.classList.add('card');
+        removeButton.classList.add('btn');
+        readBtn.classList.add('btn');
         removeButton.classList.add('remove-btn');
-        readBtn.classList.add('remove-btn')
+        readBtn.classList.add('read-btn');
         div.style = "white-space: pre;";
         main.appendChild(div);
         div.appendChild(textNode);
@@ -93,4 +95,22 @@ function addButton() {
 
 //remove book function 
 
+function removeBookButton() {
+    const removeButton = document.querySelectorAll('.remove-btn');
+
+    removeButton.forEach(btn => btn.addEventListener('click', () => {
+        //add code to execute
+    }));
+}
+
 //change read status function
+
+
+function readStatusButton() {
+    const readButton = document.querySelectorAll('.read-btn');
+
+    readButton.forEach(btn => btn.addEventListener('click', () => {
+        //add code to execute
+    }));
+}
+

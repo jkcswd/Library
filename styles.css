@@ -53,14 +53,14 @@ header {
     transform: scale(1.05);
 }
 
-/* remove book button */
-.remove-btn {
+/* remove and read/not read book button */
+.btn {
     background-color: #1B7340 ;
     border: 1px whitesmoke solid;
     margin: 5px;
     padding: 5px;
 }
-.remove-btn:hover{
+.btn:hover{
     opacity: 0.8;
 }
 
