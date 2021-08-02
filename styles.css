@@ -49,6 +49,11 @@ header {
     transform: scale(1.05);
 }
 
+/* remove book button */
+.remove-btn {
+    
+}
+
 /* add book button */
 .add-book {
     font-size: 50px;
@@ -87,24 +92,33 @@ header {
 }
 
 .form {
+    display: flex;
+    top: 35%;
+    left:35%;
+    position: fixed;
+    height: 30%;
+    width: 30%;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 .close {
     color: whitesmoke;
-    float: right;
     font-size: 28px;
     font-weight: bold;
     transition: 0.3s;
 }
 .close:hover{
-    color: #343434;
-    transform: scale(1.05);
+    color: #1B7340;
 }
 .save {
     border: #343434 1px solid;
     background-color: whitesmoke;
     color: #1B7340;
-    float:left;
-    position: fixed;
+    font-size: 20px;
+}
+.save:hover {
+    opacity: 0.8;
 }
 
