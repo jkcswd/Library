@@ -32,6 +32,7 @@ header {
 
 /* card styling */
 .card {
+    display: flex;
     height: 400px;
     width: 300px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
@@ -43,6 +44,9 @@ header {
     border: rgb(163, 163, 163) 5px solid;
     border-radius: 20px;
     color: whitesmoke;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 .card:hover {
     box-shadow: 0 8px 16px rgba(0,0,0,1);
@@ -51,7 +55,13 @@ header {
 
 /* remove book button */
 .remove-btn {
-    
+    background-color: #1B7340 ;
+    border: 1px whitesmoke solid;
+    margin: 5px;
+    padding: 5px;
+}
+.remove-btn:hover{
+    opacity: 0.8;
 }
 
 /* add book button */

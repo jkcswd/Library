@@ -40,12 +40,17 @@ function displayLib() {
         const div = document.createElement('div');
         const main = document.querySelector('.main');
         const textNode = document.createTextNode(e.info());
+        const removeButton = document.createElement('div');
+        const btnTextNode = document.createTextNode('X');
 
 
         div.classList.add('card');
+        removeButton.classList.add('remove-btn');
         div.style = "white-space: pre;";
         main.appendChild(div);
         div.appendChild(textNode);
+        div.appendChild(removeButton);
+        removeButton.appendChild(btnTextNode);
     });
 }
 
