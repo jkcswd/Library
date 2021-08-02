@@ -22,12 +22,12 @@ ${this.pages} pages
 I have ${this.read} it.`; }
 }
 
-//add to lib function
+//add to lib function not working?
 function addBookToLibrary() {
-    const title = document.querySelector('.title');
-    const author = document.querySelector('.author');
-    const pages = document.querySelector('.pages');
-    const read = document.querySelector('.read');
+    const title = document.querySelector('.title').value;
+    const author = document.querySelector('.author').value;
+    const pages = document.querySelector('.pages').value;
+    const read = (document.querySelector('.read').checked ? 'read' : 'not read');
     const book = new Book(title, author, pages, read);
 
     myLibrary.push(book);
@@ -41,6 +41,7 @@ function displayLib() {
         const main = document.querySelector('.main');
         const textNode = document.createTextNode(e.info());
 
+
         div.classList.add('card');
         div.style = "white-space: pre;";
         main.appendChild(div);
@@ -48,26 +49,36 @@ function displayLib() {
     });
 }
 
-// add to library button listener
+// add to library button listener (safe?)
 
 function addButton() {
     const addBtn = document.querySelector('.add-book');
     const modal = document.querySelector('.modal');
     const saveBtn = document.querySelector('.save');
     const closeBtn = document.querySelector('.close');
+    const inputs = document.querySelectorAll('.inputs');
+    const check = document.querySelector('.check');
+    const main = document.querySelector('.main');
 
     addBtn.addEventListener('click', () => {
         modal.style.display = "block";
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = "none";
-            displayLib();
-        });
-        saveBtn.addEventListener('click', () => {
-            modal.style.display = "none";
-            addBookToLibrary();
-            displayLib();
-        });
-        
     });
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = "none";
+        inputs.forEach( input  => input.value = '');
+        check.checked = false;
+    });
+
+    saveBtn.addEventListener('click', () => {
+        modal.style.display = "none";
+        addBookToLibrary();
+        while (main.childNodes.length > 2) {main.removeChild(main.lastChild)};
+        displayLib();
+        inputs.forEach(input  => input.value = '');
+        check.checked = false;
+    });
+        
+    
 }
 
