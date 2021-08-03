@@ -36,6 +36,8 @@ function addBookToLibrary() {
 //display lib function
 
 function displayLib() {
+    let count = 0;
+
     myLibrary.forEach(e => {
         const div = document.createElement('div');
         const main = document.querySelector('.main');
@@ -45,8 +47,9 @@ function displayLib() {
         const readBtn =  document.createElement('div');
         const readTextNode = document.createTextNode('Read/Not Read');
 
-
         div.classList.add('card');
+        div.setAttribute('data-index', `${count}`);
+        count +=1;
         removeButton.classList.add('btn');
         readBtn.classList.add('btn');
         removeButton.classList.add('remove-btn');
@@ -94,7 +97,6 @@ function addButton() {
 }
 
 //remove book function 
-
 function removeBookButton() {
     const removeButton = document.querySelectorAll('.remove-btn');
 
@@ -104,13 +106,12 @@ function removeBookButton() {
 }
 
 //change read status function
-
-
 function readStatusButton() {
     const readButton = document.querySelectorAll('.read-btn');
 
     readButton.forEach(btn => btn.addEventListener('click', () => {
         //add code to execute
+
     }));
 }
 
