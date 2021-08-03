@@ -1,5 +1,7 @@
 addButton();
 
+//refactor to module pattern? a lot of reapetition
+
 let myLibrary = [];
 
 // Book constructor and prototype
@@ -91,6 +93,8 @@ function addButton() {
         addBookToLibrary();
         while (main.childNodes.length > 2) {main.removeChild(main.lastChild)};
         displayLib();
+        removeBookButton();
+        readStatusButton();
         inputs.forEach(input  => input.value = '');
         check.checked = false;
     });
@@ -99,19 +103,34 @@ function addButton() {
 //remove book function 
 function removeBookButton() {
     const removeButton = document.querySelectorAll('.remove-btn');
+    const main = document.querySelector('.main')
 
     removeButton.forEach(btn => btn.addEventListener('click', () => {
-        //add code to execute
+        const index = parseInt(btn.parentElement.getAttribute('data-index'));
+        myLibrary.splice(index, 1);
+        while (main.childNodes.length > 2) {main.removeChild(main.lastChild)};
+        displayLib();
+        removeBookButton();
+        readStatusButton();
+
     }));
 }
 
 //change read status function
 function readStatusButton() {
     const readButton = document.querySelectorAll('.read-btn');
+    const main = document.querySelector('.main')
 
     readButton.forEach(btn => btn.addEventListener('click', () => {
-        //add code to execute
+        const index = parseInt(btn.parentElement.getAttribute('data-index'));
 
+        myLibrary[index].read = (myLibrary[index].read === 'read' ? 'not read' : 'read');
+        while (main.childNodes.length > 2) {main.removeChild(main.lastChild)};
+        displayLib();
+        removeBookButton();
+        readStatusButton();
     }));
 }
+
+//save to local storage function
 
