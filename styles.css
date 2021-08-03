@@ -132,7 +132,7 @@ header {
     opacity: 0.8;
 }
 
-/*local storage save button */
+/*local storage buttons */
 .local {
     border: black 2px solid;
     background-color: #343434;
@@ -147,3 +147,31 @@ header {
     transform: scale(1.1);
 }
 
+
+.local-load {
+    border: black 2px solid;
+    background-color: #343434;
+    color: #1B7340;
+    font-size: 30px;
+    transition: 0.3s;
+}
+
+.local-load:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+
+.local-delete {
+    border: black 2px solid;
+    background-color: #343434;
+    color: #1B7340;
+    font-size: 30px;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+
+.local-delete:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}

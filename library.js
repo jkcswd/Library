@@ -1,4 +1,7 @@
 addButton();
+localSave();
+localLoad();
+localDelete();
 
 //refactor to module pattern? a lot of reapetition
 
@@ -134,3 +137,33 @@ function readStatusButton() {
 
 //save to local storage function
 
+function localSave() {
+    const saveBtn = document.querySelector('.local');
+
+    saveBtn.addEventListener('click', () => {
+        localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
+    });
+}
+
+//load local storage
+function localLoad() {
+    if (localStorage){
+        const loadBtn = document.querySelector('.local-load');
+
+        loadBtn.addEventListener('click', () => {
+            myLibrary = JSON.parse(localStorage.getItem('myLibrary'));
+            myLibrary.map(obj => Object.setPrototypeOf(obj, Book.prototype));
+            displayLib();
+        });
+    };
+    
+}
+
+//delete local storage
+function localDelete() {
+    const deleteBtn = document.querySelector('.local-delete')
+
+    deleteBtn.addEventListener('click', () => {
+        localStorage.clear();
+    });
+}
