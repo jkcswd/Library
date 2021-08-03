@@ -147,13 +147,15 @@ function localSave() {
 
 //load local storage
 function localLoad() {
-    if (localStorage){
+    if (localStorage.length > 0){
         const loadBtn = document.querySelector('.local-load');
 
         loadBtn.addEventListener('click', () => {
             myLibrary = JSON.parse(localStorage.getItem('myLibrary'));
             myLibrary.map(obj => Object.setPrototypeOf(obj, Book.prototype));
             displayLib();
+            removeBookButton();
+            readStatusButton();
         });
     };
     
