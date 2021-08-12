@@ -7,7 +7,7 @@ localDelete();
 
 let myLibrary = [];
 
-// Book constructor and prototype
+// Book constructor and prototype (refactor to class)
 function Book(title,author,pages,read) {
     this.title = title
     this.author = author
