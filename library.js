@@ -8,15 +8,17 @@ localDelete();
 let myLibrary = [];
 
 // Book constructor and prototype (refactor to class)
-function Book(title,author,pages,read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-}
+class Book {
 
-Book.prototype = {
-    info : function() {return `
+    constructor(title,author,pages,read){
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
+
+    info() {
+        return `
 ${this.title}
 By ${this.author}
 
@@ -24,7 +26,8 @@ By ${this.author}
 ${this.pages} pages
 
 
-I have ${this.read} it.`; }
+I have ${this.read} it.`; 
+    }
 }
 
 //add to lib function not working?
