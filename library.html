@@ -23,16 +23,16 @@
     <div class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <button class="save">Save</button>
             <form action="library.js" class="form">
                 <label for="title">Title:</label>
-                <input type="text" id="title" class="title inputs"/>
+                <input type="text" id="title" class="title inputs" required />
                 <label for="author">Author:</label>
-                <input type="text" id="author" class="author inputs"/>
+                <input type="text" id="author" class="author inputs" required />
                 <label for="pages">Pages:</label>
-                <input type="number" id="pages" class="pages inputs"/>
+                <input type="number" id="pages" class="pages inputs" required />
                 <label for="read">Read:</label>
-                <input type="checkbox" id="read" class="read check">
+                <input type="checkbox" id="read" class="read check" required />
+                <button class="save">Save</button>
             </form>
 
         </div>

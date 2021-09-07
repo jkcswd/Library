@@ -95,14 +95,16 @@ function addButton() {
     });
 
     saveBtn.addEventListener('click', () => {
-        modal.style.display = "none";
-        addBookToLibrary();
-        while (main.childNodes.length > 2) {main.removeChild(main.lastChild)};
-        displayLib();
-        removeBookButton();
-        readStatusButton();
-        inputs.forEach(input  => input.value = '');
-        check.checked = false;
+        if ([...inputs].every(e => e.validity.valid)){
+          modal.style.display = "none";
+          addBookToLibrary();
+          while (main.childNodes.length > 2) {main.removeChild(main.lastChild)};
+          displayLib();
+          removeBookButton();
+          readStatusButton();
+          inputs.forEach(input  => input.value = '');
+          check.checked = false;
+        }
     });
 }
 
