@@ -59,6 +59,7 @@ header {
     border: 1px whitesmoke solid;
     margin: 5px;
     padding: 5px;
+    border-radius: 5px;
 }
 .btn:hover{
     opacity: 0.8;
@@ -144,6 +145,7 @@ input:invalid {
     font-size: 30px;
     margin: 20px;
     transition: 0.3s;
+    border-radius: 5px;
 }
 
 .local:hover {
@@ -158,6 +160,7 @@ input:invalid {
     color: #1B7340;
     font-size: 30px;
     transition: 0.3s;
+    border-radius: 5px;
 }
 
 .local-load:hover {
@@ -173,6 +176,7 @@ input:invalid {
     font-size: 30px;
     margin-right: 20px;
     transition: 0.3s;
+    border-radius: 5px;
 }
 
 .local-delete:hover {
