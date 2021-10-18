@@ -3,7 +3,7 @@ localSave();
 localLoad();
 localDelete();
 
-//refactor to module pattern? a lot of reapetition
+//refactor to module pattern? a lot of repetition
 
 let myLibrary = [];
 
